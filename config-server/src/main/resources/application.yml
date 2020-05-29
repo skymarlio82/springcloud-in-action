@@ -1,0 +1,30 @@
+server:
+  port: 8762
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/skymarlio82/springcloud-in-action
+          search-paths: repo/springcloud-config
+          username: skymarlio82
+          password: _Rrf9jxwd
+    bus:
+      trace:
+        enabled: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
