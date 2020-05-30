@@ -26,6 +26,6 @@ management:  endpoints:
     web:
       exposure:
         include: "*"
-zuul:  routes:    config-client:
-      path: /api_cnf_cli/**
-      service-id: config-client
+#zuul:#  routes:#    config-client:
+#      path: /api_cnf_cli/**
+#      service-id: config-client
