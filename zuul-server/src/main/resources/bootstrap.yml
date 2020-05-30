@@ -1,0 +1,31 @@
+server:
+  port: 8763
+spring:
+  application:
+    name: zuul-server
+  cloud:
+    config:
+      name: zuul-server
+      profile: dev
+      label: master
+      discovery:
+        enabled: true
+        service-id: config-server
+    bus:
+      trace:        enabled: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+management:  endpoints:
+    web:
+      exposure:
+        include: "*"
+zuul:  routes:    config-client:
+      path: /api_cnf_cli/**
+      service-id: config-client

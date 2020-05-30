@@ -51,5 +51,6 @@
 		<module>eureka-server</module>
 		<module>config-server</module>
 		<module>config-client</module>
+		<module>zuul-server</module>
 	</modules>
 </project>
