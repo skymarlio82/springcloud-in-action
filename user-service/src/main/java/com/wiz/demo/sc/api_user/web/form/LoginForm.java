@@ -1,5 +1,5 @@
 
-package com.wiz.demo.sc.api_user.web.bean;
+package com.wiz.demo.sc.api_user.web.form;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
