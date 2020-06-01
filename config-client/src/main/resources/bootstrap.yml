@@ -13,16 +13,3 @@ spring:
         service-id: config-server
     bus:
       trace:        enabled: true
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
-eureka:
-  client:
-    service-url:
-      default-zone: http://localhost:8761/eureka
-management:  endpoints:
-    web:
-      exposure:
-        include: "*"
