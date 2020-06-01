@@ -23,6 +23,11 @@
 	</parent>
 	<dependencies>
 		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
@@ -48,6 +53,7 @@
 		</plugins>
 	</build>
 	<modules>
+		<module>common-module</module>
 		<module>eureka-server</module>
 		<module>config-server</module>
 		<module>config-client</module>
