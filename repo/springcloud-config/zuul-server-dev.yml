@@ -1,0 +1,8 @@
+zuul:
+  routes:
+    config-client:
+      path: /api_cnf_cli/**
+      service-id: config-client
+    user-service:
+      path: /api_user/**
+      service-id: user-service

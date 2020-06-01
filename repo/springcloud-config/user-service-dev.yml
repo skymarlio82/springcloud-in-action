@@ -1,0 +1,3 @@
+jwt:
+  secret:
+    hs256: pass1234default
