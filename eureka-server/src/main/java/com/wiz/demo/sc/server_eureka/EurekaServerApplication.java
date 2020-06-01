@@ -1,5 +1,5 @@
 
-package com.wiz.demo.sc.eureka;
+package com.wiz.demo.sc.server_eureka;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

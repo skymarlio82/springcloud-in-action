@@ -52,5 +52,6 @@
 		<module>config-server</module>
 		<module>config-client</module>
 		<module>zuul-server</module>
+		<module>user-service</module>
 	</modules>
 </project>

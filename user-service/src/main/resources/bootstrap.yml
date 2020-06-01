@@ -1,11 +1,11 @@
 server:
-  port: 8763
+  port: 8081
 spring:
   application:
-    name: zuul-server
+    name: user-service
   cloud:
     config:
-      name: zuul-server
+      name: user-service
       profile: dev
       label: master
       discovery:
