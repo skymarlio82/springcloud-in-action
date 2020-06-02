@@ -13,6 +13,15 @@ public class UserTokenManager {
 		return jwtHelper.createToken(id);
 	}
 
+	public static Integer getUserId(String token, String secret) {
+		JwtHelper jwtHelper = new JwtHelper();
+		Integer userId = jwtHelper.verifyTokenAndGetUserId(token, secret);
+		if (userId == null || userId == 0) {
+			return null;
+		}
+		return userId;
+	}
+
 	public static Integer getUserId(String token) {
 		JwtHelper jwtHelper = new JwtHelper();
 		Integer userId = jwtHelper.verifyTokenAndGetUserId(token);

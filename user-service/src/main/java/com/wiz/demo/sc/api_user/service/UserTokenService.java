@@ -15,4 +15,8 @@ public class UserTokenService {
 	public String genToken(Integer userId) {
 		return UserTokenManager.generateToken(userId, secretHS256);
 	}
+
+	public boolean checkToken(String token) {
+		return UserTokenManager.getUserId(token, secretHS256) > 0 ? true : false;
+	}
 }

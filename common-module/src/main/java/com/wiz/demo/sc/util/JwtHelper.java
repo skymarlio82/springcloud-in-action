@@ -51,10 +51,17 @@ public class JwtHelper {
 	}
 
 	public Integer verifyTokenAndGetUserId(String token) {
+		return this.verifyTokenAndGetUserId(token, SECRET);
+	}
+
+	public Integer verifyTokenAndGetUserId(String token, String secret) {
 		try {
-			Algorithm algorithm = Algorithm.HMAC256(SECRET);
+			Algorithm algorithm = Algorithm.HMAC256(secret);
 			JWTVerifier verifier = JWT.require(algorithm).withIssuer(ISSUSER).build();
 			DecodedJWT jwt = verifier.verify(token);
+			if ((new Date()).after(jwt.getExpiresAt())) {
+				return -1;
+			}
 			Map<String, Claim> claims = jwt.getClaims();
 			Claim claim = claims.get("userId");
 			return claim.asInt();
