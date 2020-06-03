@@ -1,11 +1,11 @@
 
-package com.wiz.demo.sc.server_zuul.fallback;
+package com.wiz.demo.sc.configclient.fallback;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import com.wiz.demo.sc.server_zuul.remote.TokenRemote;
+import com.wiz.demo.sc.configclient.remote.TokenRemote;
 
 @Component
 public class TokenRemoteHystrix implements TokenRemote {

@@ -6,6 +6,7 @@ zuul:
     user-service:
       path: /api_user/**
       service-id: user-service
-url-whitelist:
-  - /user/auth/login
-  - /user/token/check
+#url-whitelist:
+#  - /user/auth/login
+#  - /user/token/check
+whitelist: /user/auth/login,/user/token/check

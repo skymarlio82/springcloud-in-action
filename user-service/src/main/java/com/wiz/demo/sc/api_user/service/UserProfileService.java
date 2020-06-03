@@ -21,7 +21,7 @@ public class UserProfileService {
 	@Transactional(readOnly=true)
 	public UserProfile getUserByName(String username) {
 		UserProfile user = userProfileRepo.findByUsername(username);
-		logger.debug("===> getUserByName ({}) := {}", username, user);
+		logger.info("===> getUserByName ({}) := {}", username, user);
 		return user;
 	}
 }

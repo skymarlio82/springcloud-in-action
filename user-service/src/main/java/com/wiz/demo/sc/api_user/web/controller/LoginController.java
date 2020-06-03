@@ -34,7 +34,7 @@ public class LoginController {
 
 	@PostMapping("/login")
 	public Object login(@RequestBody @Valid LoginForm loginForm) {
-		logger.debug("===> LoginForm := {}", loginForm);
+		logger.info("===> LoginForm := {}", loginForm);
 		UserProfile user = userProfileService.getUserByName(loginForm.getUsername().toLowerCase());
 		if (StringUtils.isEmpty(user)) {
 			return ResponseUtil.fail("400", "User not existed");
