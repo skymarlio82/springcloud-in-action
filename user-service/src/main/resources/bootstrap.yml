@@ -23,9 +23,6 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/sc_demo_user?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true&verifyServerCertificate=false&useSSL=false
-    username: root
-    password: password
     hikari:
       pool-name: hikariCP
       maximum-pool-size: 10

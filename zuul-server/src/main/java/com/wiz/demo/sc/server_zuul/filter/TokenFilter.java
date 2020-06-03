@@ -1,7 +1,7 @@
 
 package com.wiz.demo.sc.server_zuul.filter;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,15 +23,8 @@ public class TokenFilter extends ZuulFilter {
 
 	private final static Logger logger = LoggerFactory.getLogger(TokenFilter.class);
 
-	private final static List<String> whiteList = new ArrayList<>();
-
-	static {
-		whiteList.add("/user/auth/login");
-		whiteList.add("/user/token/validate");
-	}
-
 	@Value("${whitelist}")
-	private String wList = null;
+	private String urlList = null;
 
 	@Autowired
 	private TokenRemote tokenRemote = null;
@@ -53,11 +46,11 @@ public class TokenFilter extends ZuulFilter {
 
 	@Override
 	public Object run() throws ZuulException {
-		System.out.println("========== wList: " + wList);
 		RequestContext ctx = RequestContext.getCurrentContext();
 		HttpServletRequest request = ctx.getRequest();
 		String method = request.getMethod();
 		String url = request.getRequestURL().toString();
+		List<String> whiteList = Arrays.asList(urlList.split(","));
 		logger.info("===> TokenFilter {},{},{}", method, url, whiteList);
 		boolean isWhite = whiteList.stream().anyMatch(elem -> url.endsWith(elem));
 		String token = request.getHeader("token");

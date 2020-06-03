@@ -1,3 +1,8 @@
 jwt:
   secret:
-    hs256: pass1234default
+    hs256: ENC(JUF0n6aZTK5YWhJYP4ZLJUYpyK4GsYsJ)
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/sc_demo_user?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true&verifyServerCertificate=false&useSSL=false
+    username: root
+    password: ENC(RJzfVLi92h9mu6mlXP3BvLE62FGBRNen)
