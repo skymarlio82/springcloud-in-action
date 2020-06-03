@@ -31,8 +31,8 @@ public class UserProfile implements Serializable {
 	private String username = null;
 	private String password = null;
 	private boolean enabled = false;
-    private Date lastPasswordResetDate = null;
-    @ManyToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+    private Date lastpasswordresetdate = null;
+	@ManyToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinTable(name="scd_user_authority_tab",
 		joinColumns={ @JoinColumn(name="user_id", nullable=false, updatable=false) },
 		inverseJoinColumns={ @JoinColumn(name="authority_id", nullable=false, updatable=false) }
@@ -45,6 +45,6 @@ public class UserProfile implements Serializable {
 
 	@Override
 	public String toString() {
-		return "UserProfile#{id=" + id + ",username=" + username + ",password=" + password + ",enabled=" + enabled + ",lastPasswordResetDate=" + lastPasswordResetDate + ",authorities=" + authorities + "}";
+		return "UserProfile#{id=" + id + ",username=" + username + ",password=" + password + ",enabled=" + enabled + ",lastpasswordresetdate=" + lastpasswordresetdate + ",authorities=" + authorities + "}";
 	}
 }
