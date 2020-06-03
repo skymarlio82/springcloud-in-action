@@ -1,4 +1,7 @@
 zuul:
+  FormBodyWrapperFilter:
+    pre:
+      disable: true
   routes:
     config-client:
       path: /api_cnf_cli/**
