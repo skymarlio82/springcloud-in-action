@@ -36,6 +36,7 @@ public class LoginController {
 	public Object login(@RequestBody @Valid LoginForm loginForm) {
 		logger.info("===> LoginForm := {}", loginForm);
 		UserProfile user = userProfileService.getUserByName(loginForm.getUsername().toLowerCase());
+		logger.info("===> user := {}", user);
 		if (StringUtils.isEmpty(user)) {
 			return ResponseUtil.fail("400", "User not existed");
 		}
