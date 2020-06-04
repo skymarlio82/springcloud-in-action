@@ -13,3 +13,14 @@ spring:
         service-id: config-server
     bus:
       trace:        enabled: true
+ribbon:
+  http:
+    client:
+      enabled: false
+  okhttp:
+    enabled: true
+feign:
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
