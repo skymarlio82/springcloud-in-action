@@ -2,7 +2,9 @@
 package com.wiz.demo.sc.server_zuul.filter;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -55,7 +57,9 @@ public class TokenFilter extends ZuulFilter {
 		boolean isWhite = whiteList.stream().anyMatch(elem -> url.endsWith(elem));
 		String token = request.getHeader("token");
 		logger.info("===> token: {}", token);
-		if (isWhite || (!StringUtils.isEmpty(token) && tokenRemote.validateToken(token).equals("Success"))) {
+		Map<String, Object> inputs = new HashMap<>();
+		inputs.put("token", token);
+		if (isWhite || (!StringUtils.isEmpty(token) && tokenRemote.validateToken(inputs).equals("Success"))) {
 			ctx.setSendZuulResponse(true);
 			ctx.setResponseStatusCode(200);
 			ctx.set("isSuccess", true);

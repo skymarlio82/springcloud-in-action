@@ -1,6 +1,8 @@
 
 package com.wiz.demo.sc.configclient.fallback;
 
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -12,8 +14,14 @@ public class TokenRemoteHystrix implements TokenRemote {
 
 	private final static Logger logger = LoggerFactory.getLogger(TokenRemoteHystrix.class);
 
+//	@Override
+//	public String validateToken(String token) {
+//		logger.info("==========>>>> Hystrix Callback Triggered <<<<==========");
+//		return "Failure";
+//	}
+
 	@Override
-	public String validateToken(String token) {
+	public String validateToken(Map<String, Object> inputs) {
 		logger.info("==========>>>> Hystrix Callback Triggered <<<<==========");
 		return "Failure";
 	}

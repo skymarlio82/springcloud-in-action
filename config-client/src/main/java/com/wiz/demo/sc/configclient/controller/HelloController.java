@@ -1,6 +1,9 @@
 
 package com.wiz.demo.sc.configclient.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +27,8 @@ public class HelloController {
 	@RequestMapping("/hello")
 	public String from(HttpServletRequest req) {
 		String token = req.getHeader("token");
-		return this.hello + ", " + tokenRemote.validateToken(token);
+		Map<String, Object> inputs = new HashMap<>();
+		inputs.put("token", token);
+		return this.hello + ", " + tokenRemote.validateToken(inputs);
 	}
 }
