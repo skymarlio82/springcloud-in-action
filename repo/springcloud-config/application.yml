@@ -4,6 +4,17 @@ spring:
     port: 5672
     username: guest
     password: ENC(2RenmNlNmZIlT9wAJmYGFw==)
+  zipkin:
+    base-url: http://localhost:9411/
+    discoveryClientEnabled: false
+    sender:
+      type: web
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      probability: 1.0
 eureka:
   client:
     service-url:
