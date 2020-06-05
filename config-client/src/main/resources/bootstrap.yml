@@ -14,6 +14,8 @@ spring:
     bus:
       trace:        enabled: true
 feign:
+  hystrix:
+    enabled: true
   httpclient:
     enabled: false
   okhttp:

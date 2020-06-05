@@ -1,24 +1,26 @@
 
-package com.wiz.demo.sc.server_zuul;
+package com.wiz.demo.sc.server_hystrix_dashboard;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
+import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 
 import com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServlet;
 
 @SpringBootApplication
-@EnableZuulProxy
 @EnableEurekaClient
 @EnableFeignClients
-public class ZuulServerApplication {
+@EnableHystrixDashboard
+@EnableCircuitBreaker
+public class HystrixDashboardServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ZuulServerApplication.class, args);
+		SpringApplication.run(HystrixDashboardServerApplication.class, args);
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -27,7 +29,7 @@ public class ZuulServerApplication {
 		HystrixMetricsStreamServlet streamServlet = new HystrixMetricsStreamServlet();
 		ServletRegistrationBean registrationBean = new ServletRegistrationBean(streamServlet);
 		registrationBean.setLoadOnStartup(1);
-		registrationBean.addUrlMappings("/actuator/hystrix.stream");
+		registrationBean.addUrlMappings("/hystrix.stream");
 		registrationBean.setName("HystrixMetricsStreamServlet");
 		return registrationBean;
 	}

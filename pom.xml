@@ -65,5 +65,6 @@
 		<module>config-client</module>
 		<module>zuul-server</module>
 		<module>user-service</module>
+		<module>hystrix-dashboard-server</module>
 	</modules>
 </project>
