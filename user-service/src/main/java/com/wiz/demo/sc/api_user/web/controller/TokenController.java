@@ -40,7 +40,7 @@ public class TokenController {
 	public String validateToken(@RequestBody Map<String, Object> inputs) {
 		String token = (String)inputs.get("token");
 		boolean result = userTokenService.validateToken(token);
-		logger.info("===> token:{},result:{}", token, result);
+		logger.info("===> [2nd ins] token:{},result:{}", token, result);
 		return result ? "Success" : "Failure";
 	}
 }

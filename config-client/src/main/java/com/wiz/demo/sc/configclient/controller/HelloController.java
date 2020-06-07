@@ -29,6 +29,6 @@ public class HelloController {
 		String token = req.getHeader("token");
 		Map<String, Object> inputs = new HashMap<>();
 		inputs.put("token", token);
-		return this.hello + ", " + tokenRemote.validateToken(inputs);
+		return this.hello + ", [2nd ins] " + tokenRemote.validateToken(inputs);
 	}
 }
