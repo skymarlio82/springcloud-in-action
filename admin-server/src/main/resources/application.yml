@@ -1,6 +1,8 @@
 spring:
   application:
     name: admin-server
+  security:    user:      name: admin
+      password: admin
 server:
   port: 8766
 eureka:
@@ -9,6 +11,9 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka
   instance:
+    metadata-map:      user:
+        name: ${spring.security.user.name}
+        password: ${spring.security.user.password}
     leaseRenewalIntervalInSeconds: 10
     health-check-url-path: /actuator/health
 management:
