@@ -1,17 +1,18 @@
 
-package com.wiz.demo.sc.api_user;
+package com.wiz.demo.sc.server_admin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+
+import de.codecentric.boot.admin.server.config.EnableAdminServer;
 
 @SpringBootApplication
-@EnableEurekaClient
+@EnableAdminServer
 @EnableDiscoveryClient
-public class UserApiApplication {
+public class AdminServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UserApiApplication.class, args);
+		SpringApplication.run(AdminServerApplication.class, args);
 	}
 }

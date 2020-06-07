@@ -1,16 +1,16 @@
-server:
-  port: 8761
 spring:
   application:
-    name: eureka-server
+    name: admin-server
+server:
+  port: 8766
 eureka:
-  server:
-    enable-self-preservation: true
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    registryFetchIntervalSeconds: 5
     service-url:
       defaultZone: http://localhost:8761/eureka
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
 management:
   endpoints:
     web:

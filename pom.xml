@@ -68,5 +68,6 @@
 		<module>hystrix-dashboard-server</module>
 		<module>turbine-server</module>
 		<module>zipkin-server</module>
+		<module>admin-server</module>
 	</modules>
 </project>
